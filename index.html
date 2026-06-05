@@ -1,502 +1,483 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>MARIA KORONI</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maria Koroni | Computational Seismology</title>
+  <meta name="description" content="Maria Koroni — computational seismology, full-waveform modelling, seismic hazard, and wave physics." />
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --paper: #ffffff;
+      --ink: #1e252b;
+      --muted: #66727d;
+      --line: #e4e0d8;
+      --accent: #6d8b9b;
+      --accent-dark: #365867;
+      --soft: #eef3f4;
+      --max: 1080px;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(35, 45, 50, 0.08);
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(109, 139, 155, 0.16), transparent 32rem),
+        linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
+      line-height: 1.68;
+    }
 
-				<!-- Header -->
-					<header id="header">
-           <div class='container'>
-						 <style>
-.cats {
-  max-width: 24%;
-}
-</style>
-    <span class="icon  fa-circle"></span>
-				     </div>
+    a { color: var(--accent-dark); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+    a:hover { color: #1f4251; }
+    img { max-width: 100%; display: block; }
 
-						 						<div class="content">
-							<div class="inner">
-								<h1>MARIA KORONI</h1>
-								<p> </p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">ABOUT ME</a></li>
-								<li><a href="#intro">RESEARCH</a></li>
-								<li><a href="#work">PUBLICATIONS</a></li>
-								<li><a href="#contact">CONTACT</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+    .site-header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 22px 0;
+    }
 
-				<!-- Main -->
-					<div id="main">
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">RESEARCH</h2>
-								<p> Living on a dynamic planet creates curiosity about the physical processes taking place at various depths in its interior.
-									 Seismology is a tool for observing, analysing and understanding Earth's processes. 
-									Many methods of creating snapshots of
-									 the Earth's interior based on earthquake data observations have been developed. My focus is on full-waveform methods, which
-									 mainly rely on numerical wave propagation for modelling waveforms and inversion techniques based on numerical optimisation schemes,
-									  which properly account for the complexity and finite-frequency nature of seismic waves.</p>
-									<span class="image main"><img src="images/interior.png" alt="maria" "width"=500 "height"=600 /></span>
+    .brand {
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
 
-								<p> Imaging earth's deep interior from crust to core using full-waveform inversion and adjoint methods is key to better
-									 resolution images and accounting for the full physics of the wave propagation. Exploring technical and theoretical
-									 capabilities and advancing current methods is a big focus of my work. With my work, I have shown volumetric
-									 and boundary interface changes, such as the mantle transition zone and the solid-fluid core-mantle boundary.  </p>
-							        	<p> Analysis of observables on seismogram and their sensitivity is central to my work. Understanding better the potential usages as
-									well as complexities characterising observed quantities on recordings can help us invent and utilise ways of harvesting most of
-									the information. </p>
-								<span class="image main"><img src="images/seis.png" alt="maria" "width"=500 "height"=600 /></span>
-									<span class="image main"><img src="images/kernels.png" alt="maria" "width"=500 "height"=600 /></span>
-								<span class="image main"><img src="images/cmb.png" alt="maria" "width"=500 "height"=600 /></span>
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.92rem;
+    }
 
-								<p>	My work has shown the potential of full-waveform inversion to entirely account for finite-frequency nature of seismic waves within a
-									non-linear inversion scheme. This is achieved with the aid of adjoint methods and iterative optimisation of the misfit function. Boundary sensitivity is explicitly used to
-								infer structure along global discontinuities. This provides high quality maps of topography at various depths and high-resolution seismological input for other geophysical disciplines, namely
-								mineral physics and geodynamic modelling. </p>
-								<span class="image main"><img src="images/iterative.png" alt="maria" "width"=500 "height"=600 /></span>
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
 
-							        	</article>
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 40px;
+      align-items: center;
+      padding: 76px 0 64px;
+    }
+
+    .eyebrow {
+      color: var(--accent-dark);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin: 0 0 12px;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      letter-spacing: -0.065em;
+      max-width: 9ch;
+    }
+
+    .hero p.lede {
+      font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+      color: var(--muted);
+      max-width: 680px;
+      margin: 24px 0 0;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .portrait {
+      border-radius: calc(var(--radius) - 8px);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: var(--soft);
+      margin-bottom: 18px;
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .quick-facts strong { color: var(--ink); display: block; }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px 56px;
+    }
+
+    section {
+      padding: 58px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      letter-spacing: -0.035em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 730px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(35, 45, 50, 0.04);
+    }
+
+    .card h3 { font-size: 1.12rem; margin-bottom: 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .feature-image {
+      margin-top: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-image img { width: 100%; max-height: 560px; object-fit: cover; }
+
+    .publication-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .publication-list li {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+    }
+
+    .publication-list strong { font-weight: 750; }
+    .publication-list em { color: #35464e; }
+    .meta { color: var(--muted); font-size: 0.94rem; }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .timeline {
+      margin: 12px 0 0;
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline li {
+      padding-left: 18px;
+      border-left: 3px solid var(--line);
+      color: var(--muted);
+    }
+    .timeline strong { color: var(--ink); }
 
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">PUBLICATIONS</h2>
-								<p> In this page you can find my peer-reviewed articles in chronological order. <p>
-									<p>1. <b>M. Koroni</b>, A. Borgeaud, A. Fichtner, F. Deschamps.
-									<i>An analysis of seismic phases related to core-mantle boundary using full-waveforms and adjoint methods,</i>, Geophysical Journal International, 2022.
-									<a href=" 	 https://doi.org/10.1093/gji/ggac389">  doi.org/10.1093/gji/ggac389</a></p>
-		 
-										
-										
-								<p> 2. 	L. Ermert, <b>M. Koroni</b> and N. Korta Martiartu. <i>Quantifying gender gaps in seismology authorship,</i>
-									Solid Earth, 2022.
-									<a href=" https://doi.org/10.5194/egusphere-2022-810"> doi.org/10.5194/egusphere-2022-810</a></p>
-                                
-			  	                  <p> 3. Daniel C. Bowden, Andreas Fichtner, Thomas Nikas, Adonis Bogris, Christos Simos, Krystyna Smolinski, <b>Maria Koroni</b>, Konstantinos Lentas, Iraklis Simos, Nikolaos S. Melis. <i>Linking Distributed and Integrated Fiber-Optic Sensing,</i>
-									Geophysical Research Letters, 2022.
-									<a href="  https://doi.org/10.1029/2022GL098727"> doi.org/10.1029/2022GL098727</a></p>
-			  
-								
-								<p> 4.  <b>M. Koroni</b> and J. Trampert,<i> Imaging global mantle discontinuities: a test using full-waveforms and adjoint kernels,</i>
-									Geophysical Journal International, 2021.
-									<a href=" 	https://doi.org/10.1093/gji/ggab119"> doi.org/10.1093/gji/ggab119</a></p>
+    .card.wide { grid-column: 1 / -1; }
+    .compact-list {
+      margin: 12px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+    .compact-list li { margin: 0.28rem 0; }
+    .skill-lines {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+    .skill-lines div {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+    }
+    .skill-lines strong { color: var(--ink); }
 
-									<p> 5. 	S.M. Haugland, J. Ritsema, D Sun, J. Trampert, <b>M. Koroni</b>,
-										 <i>Common reflection point mapping of the mantle transition zone using recorded and 3-D synthetic ScS reverberations,</i>
-                  	Geophysical Journal International, Volume 220, Issue 1, January 2020, Pages 724–736,
-									<a href="https://doi.org/10.1093/gji/ggz467">doi.org/10.1093/gji/ggz467</a> </p>
+    .contact-box {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
 
-									<p> 6. <b>M. Koroni</b>, H. Paulssen, J. Trampert,
-									<i>	Sensitivity Kernels of PP Precursor Traveltimes and Their Limitations for Imaging Topography of Discontinuities,</i>
-										 Geophysical research letters 46 (2), 698-707
-									   <a href=" https://doi.org/10.1029/2018GL081592"> doi.org/10.1029/2018GL081592</a></p>
+    .contact-box p { margin: 10px 0 0; color: rgba(255,255,255,0.76); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
+    .socials {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
 
-								<p> 7. <b>M. Koroni</b> E. Bozdag, H. Paulssen and J. Trampert,
-								<i>	 Sensitivity analysis of seismic waveforms to upper-mantle discontinuities using the adjoint method,</i>
-								Geophysical Journal International, Volume 210, Issue 3, September 2017, Pages 1965–1980
- 									<a href="https://doi.org/10.1093/gji/ggx286">doi.org/10.1093/gji/ggx286</a></p>
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px 22px 44px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
-								 <p> 8. 	<b> M. Koroni</b>, J. Trampert,
-									 <i>The effect of topography of upper-mantle discontinuities on SS precursors,</i>
-                  Geophysical Journal International 204 (1), 667-681.
-									 <a href="https://academic.oup.com/gji/article/204/1/667/636509">doi.org/10.1093/gji/ggv471</a></p>
+    @media (max-width: 820px) {
+      .hero, .section-head, .cv-grid, .contact-box { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">Maria Koroni</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-								 </article>
+    <div class="hero" id="top">
+      <div>
+        <p class="eyebrow">Computational seismology · Wave physics · ETH Zürich</p>
+        <h1>Maria Koroni</h1>
+        <p class="lede">I use numerical wave propagation, full-waveform modelling, and high-performance computing to understand Earth structure and improve physics-based seismic hazard analysis.</p>
+      </div>
+      <aside class="hero-card" aria-label="Profile summary">
+        <img class="portrait" src="images/mariaK10.jpg" alt="Portrait of Maria Koroni" />
+        <dl class="quick-facts">
+          <div><strong>Current focus</strong> Physics-based ground-motion modelling and computational seismology</div>
+          <div><strong>Affiliation</strong> Swiss Seismological Service, ETH Zürich</div>
+          <div><strong>Teaching</strong> Engineering Seismology</div>
+        </dl>
+      </aside>
+    </div>
+  </header>
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">ABOUT ME</h2>
-								<p>
-																	<span class="image main"><img src="images/mariaK10.jpg" alt="maria" "width"=250 "height"=300 /></span>
+  <main>
+    <section id="research">
+      <div class="section-head">
+        <h2>Research</h2>
+        <p>My work connects seismic observations with numerical modelling to image Earth’s interior and understand how waveforms respond to complex structure, discontinuities, and interfaces.</p>
+      </div>
 
-									<p> 	Having always been interested in the physical world and in the logical explanations of phenomena and situations, the path led
-									me to study natural sciences and eventually focus on physics of our planet.
-									Over the years, I have focussed on computational geoscience, numerical modelling, high performance computing, data processing and visualisation,
-									as well as conceptualisation of problems that help us our methodologies.
-									Along these, I have had the opportunity to assist academic teaching,
-								 supervise master and bachelor theses projects and participate with various forms of presentations in international conferences.
-							   	</p>
-										<p> My goal is to incorporate full-waveform modelling and adjoint
-									methods, which are nowadays taking seismology some steps further into understanding elusive seismograms, for imaging deeper parts of the planet and its
-									global discontinuities.
-									My main research revolves around setting-up problems and exemplifying these imaging techniques using full-waveform inversion.
-								Creating detailed models of the variations in the volume and internal boundaries, determining dynamic processes Earth's interior is central to my work.
-								I am especially intrigued by how much information we are now able to harvest from the seismic recordings around the globe.        	</p>
-								<p> <b>SHORT CV </b>	</p>
-								<p> <b>EDUCATION</b>	</p>
-								<p> 1. 3. 2014- 31. 3.2018: Doctor of philosophy, PhD in Computational Seismology,
-Utrecht University, The Netherlands.
+      <div class="grid">
+        <article class="card">
+          <h3>Full-waveform modelling</h3>
+          <p>Using spectral-element simulations and adjoint methods to analyse seismic waveforms beyond ray-theoretical approximations.</p>
+        </article>
+        <article class="card">
+          <h3>Earth’s internal boundaries</h3>
+          <p>Studying sensitivity to mantle discontinuities and the core–mantle boundary to improve imaging of deep-Earth structure.</p>
+        </article>
+        <article class="card">
+          <h3>Seismic hazard workflows</h3>
+          <p>Developing physics-based simulations and computational workflows relevant for ground-motion and hazard applications.</p>
+        </article>
+      </div>
 
-Supervisor: Prof. Jeannot Trampert</p>
-<p>
-1. 2. 2012- 27. 2. 2014: Master’s degree in Geophysics, Earth structure and dynamics,
-Utrecht University, The Netherlands. </p>
-<p>
-1. 10. 2006- 20. 3. 2011: Bachelor’s degree Geophysics
-Aristotle University of Thessaloniki, Greece.
-</p>
-<p>
-<b> EXPERIENCE </b>
-<p>
-10. 2022-ongoing: Lecturer, ETH Zürich, Master course 651-4021-00L: Engineering Seismology.</p>	
-<p>								
-1. 5. 2022-ongoing: Postdoctoral researcher at Swiss Seismological Service, ETH Zürich.</p>
-<p>	
-1. 6. 2018- 31.12.2021:
-Postdoctoral researcher at ETH Zürich, Institute of Geophysics, Group of Seismology and wave physics. </p>
-<p>
-20. 2. 2019- 30. 4.2019:
-Teaching assistant ETH Zürich, Master’s course: Inverse Theory.</p>
-<p>
-1. 3. 2014- 31. 3. 2018:
-Research assistant, Seismology group, Utrecht University
-Working towards PhD thesis, experiencing with numerical seismic modelling, spectral-element wave propagation, inversion methods, data processing and scientific writing and presenting.</p>
-<p>
-	1. 9. 2014- 28. 2. 2017:
-Teaching assistant, Utrecht University,
-Assisting the main lectures with practical excercises for enhancing students skills.
-Bachelor’s course: Linear algebra & vector analysis
-Master’s course: Data processing & inverse theory </p>
-<p>1. 10.2006- 31. 12.2009:
-High school students’ private tutor in modules of Mathematics, Physics, Chemistry.
-</p>
+      <div class="feature-image">
+        <img src="images/interior.png" alt="Illustration of Earth's interior used in Maria Koroni's research" />
+      </div>
+    </section>
 
+    <section id="publications">
+      <div class="section-head">
+        <h2>Selected publications</h2>
+        <p>A compact list is easier to scan than a long archive. Link to Google Scholar, ORCID, or ETH Research Collection for the full and automatically updated record.</p>
+      </div>
 
-								<p> <b>OFF-WORK </b>	</p>
-								<p> 
-								In my time off work, I like to do ballet, be creative in different ways, travel and spend time in the nature, ideally these two combined.  
-								
-								</p>
-								
-						              <p> <b>SOCIAL MEDIA </b>	</p>
-							
-							<p> You can follow me on social media! Find my accounts by clicking on the icons below.</p>
-				 				<ul class="icons">
-				 				<li><a href="https://twitter.com/maria_koroni?ref_src=twsrc%5Etfw" class="icon brands fab fa-twitter"><span class="label">Twitter</span></a></li>
-				 				<li><a href="https://github.com/mkoroni" class="icon brands fab fa-github"><span class="label">GitHub</span></a></li>
-				 				<li><a href="https://ch.linkedin.com/in/maria-koroni-80784157" class="icon brands fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				 				<li><a href="https://www.researchgate.net/profile/Maria-Koroni" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
-				 			</ul>
+      <ol class="publication-list">
+        <li><strong>M. Koroni</strong>, A. Borgeaud, A. Fichtner, F. Deschamps. <em>An analysis of core–mantle boundary related seismic waves using full-waveform modelling and adjoint methods.</em> <span class="meta">Geophysical Journal International, 2023.</span> <a href="https://doi.org/10.1093/gji/ggac389">DOI</a></li>
+        <li>L. Ermert, <strong>M. Koroni</strong>, N. Korta Martiartu. <em>Quantifying gender gaps in seismology authorship.</em> <span class="meta">Solid Earth, 2023.</span> <a href="https://doi.org/10.5194/se-14-9-2023">DOI</a></li>
+        <li>D. C. Bowden, A. Fichtner, T. Nikas, A. Bogris, C. Simos, K. Smolinski, <strong>M. Koroni</strong>, K. Lentas, I. Simos, N. S. Melis. <em>Linking distributed and integrated fiber-optic sensing.</em> <span class="meta">Geophysical Research Letters, 2022.</span> <a href="https://doi.org/10.1029/2022GL098727">DOI</a></li>
+        <li><strong>M. Koroni</strong>, J. Trampert. <em>Imaging global mantle discontinuities: a test using full-waveforms and adjoint kernels.</em> <span class="meta">Geophysical Journal International, 2021.</span> <a href="https://doi.org/10.1093/gji/ggab119">DOI</a></li>
+        <li><strong>M. Koroni</strong>, H. Paulssen, J. Trampert. <em>Sensitivity kernels of PP precursor traveltimes and their limitations for imaging topography of discontinuities.</em> <span class="meta">Geophysical Research Letters, 2019.</span> <a href="https://doi.org/10.1029/2018GL081592">DOI</a></li>
+      </ol>
+    </section>
 
-							</article>
+    <section id="cv">
+      <div class="section-head">
+        <h2>CV</h2>
+        <p>A concise homepage version of the most recent CV: current academic roles, education, technical strengths, languages, training, and service.</p>
+      </div>
 
+      <div class="cv-grid">
+        <article class="card wide">
+          <h3>Academic positions</h3>
+          <ul class="timeline">
+            <li><strong>May 2023–present:</strong> Senior Scientist, Swiss Seismological Service, ETH Zürich. Lead ground-motion modelling with spectral-element and machine-learning techniques for regional seismic hazard; develop numerical meshes for urban-scale simulations; coordinate national supercomputing resources; integrate machine learning into waveform-modelling workflows.</li>
+            <li><strong>May 2022–present:</strong> Lecturer, ETH Zürich. Teaching “Probabilistic Seismic Hazard Analysis” as part of the Engineering Seismology MSc programme and supervising BSc/MSc theses in computational seismology and ground-motion modelling.</li>
+            <li><strong>May 2022–April 2023:</strong> Postdoctoral Researcher, Swiss Seismological Service, ETH Zürich. Developed physics-based simulations for ground-motion modelling, hybrid ground-motion modelling methodology, and seismic-safety assessment contributions.</li>
+            <li><strong>January–April 2022:</strong> Career break, Zürich. Solo travel in Asia and German-language development.</li>
+            <li><strong>June 2018–December 2021:</strong> Postdoctoral Researcher, Seismology and Wave Physics group, ETH Zürich. Designed global waveform simulations and inversions for deep-Earth structure, studied phases relevant to core–mantle boundary structure, and supervised student projects.</li>
+            <li><strong>March 2014–July 2018:</strong> PhD Researcher in Computational Seismology, Utrecht University. Developed full-waveform inversions for global mantle discontinuities and adjoint sensitivity studies using spectral-element methods.</li>
+          </ul>
+        </article>
 
+        <article class="card">
+          <h3>Teaching experience</h3>
+          <ul class="timeline">
+            <li><strong>2022–present:</strong> Lecturer, ETH Zürich — Probabilistic Seismic Hazard Assessment, MSc.</li>
+            <li><strong>2019:</strong> Teaching Assistant, ETH Zürich — Inverse Theory II, MSc.</li>
+            <li><strong>2014–2017:</strong> Teaching Assistant, Utrecht University — Linear Algebra and Vector Analysis, BSc.</li>
+            <li><strong>2014–2017:</strong> Teaching Assistant, Utrecht University — Data Processing and Inverse Theory, MSc.</li>
+          </ul>
+        </article>
 
+        <article class="card">
+          <h3>Education</h3>
+          <ul class="timeline">
+            <li><strong>2018:</strong> PhD in Computational Seismology, Utrecht University. Thesis: Studying Global Discontinuities Using Full-Waveforms.</li>
+            <li><strong>2014:</strong> MSc in Geophysics, Utrecht University. Thesis: Topography of Upper Mantle Discontinuities and SS Precursors.</li>
+            <li><strong>2011:</strong> BSc in Earth Science, Aristotle University of Thessaloniki. Thesis: Geoelectrical Analysis of the Milos Geothermal Field.</li>
+          </ul>
+        </article>
 
+        <article class="card wide">
+          <h3>Technical skills</h3>
+          <div class="skill-lines">
+            <div><strong>Programming</strong><span>Python, MATLAB, FORTRAN, Shell, LaTeX, C, HTML</span></div>
+            <div><strong>Applications</strong><span>GMT, Paraview, Cubit, SPECFEM3D, Salvus, SW4</span></div>
+            <div><strong>HPC</strong><span>CSCS Piz Daint, vClusters on Alps, Euler ETHZ, parallel computing and visualization, cloud-based modelling</span></div>
+          </div>
+        </article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">CONTACT</h2>
-								<form method="post" action="mailto:mariac.koroni@gmail.com">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="https://twitter.com/maria_koroni?ref_src=twsrc%5Etfw" class="icon brands fab fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://github.com/mkoroni" class="icon brands fab fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://ch.linkedin.com/in/maria-koroni-80784157" class="icon brands fab fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://www.researchgate.net/profile/Maria-Koroni" class="icon brands fab fa-researchgate"><span class="label">ResearchGate</span></a></li>
-								</ul>
-							</article>
+        <article class="card">
+          <h3>Languages</h3>
+          <ul class="compact-list">
+            <li>Greek — native</li>
+            <li>English — C2 fluent</li>
+            <li>German — C1 advanced</li>
+            <li>French — B1 intermediate</li>
+            <li>Dutch — A2/B1 basic</li>
+          </ul>
+        </article>
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+        <article class="card">
+          <h3>Certifications and training</h3>
+          <ul class="compact-list">
+            <li>2024 — Agile Project Management, Google Career Certificates</li>
+            <li>2021 — Leadership Essentials, ETH Zürich</li>
+            <li>2021 — Multi-GPU Training with TensorFlow, CSCS</li>
+            <li>2020 — Project Management in Research, ETH Zürich</li>
+          </ul>
+        </article>
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+        <article class="card">
+          <h3>Academic service</h3>
+          <ul class="compact-list">
+            <li>Reviewer for Nature Communications, GJI, GRL, JGR: Solid Earth, EPSL, G-cubed, and BSSA</li>
+            <li>NSF proposal evaluator</li>
+            <li>Speaker at science public-engagement events and international conferences</li>
+          </ul>
+        </article>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+        <article class="card">
+          <h3>Activities</h3>
+          <ul class="compact-list">
+            <li>2023–present — Help!Desk member for scientific employees and students, Earth and Planetary Sciences, ETH Zürich</li>
+            <li>Ballet, trail running, yoga, nature, travel, and reflection</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <h2>Contact</h2>
+          <p>For collaborations, teaching, talks, or research questions, email me or connect through academic and professional profiles.</p>
+          <div class="socials">
+            <a href="https://github.com/mkoroni">GitHub</a>
+            <a href="https://ch.linkedin.com/in/maria-koroni-80784157">LinkedIn</a>
+            <a href="https://www.researchgate.net/profile/Maria-Koroni">ResearchGate</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=0a-Fe3cAAAAJ">Google Scholar</a>
+          </div>
+        </div>
+        <a class="button" href="mailto:maria.koroni@sed.ethz.ch">Email Maria</a>
+      </div>
+    </section>
+  </main>
 
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <footer>
+    © <span id="year">2026</span> Maria Koroni. Built as a lightweight academic portfolio.
+  </footer>
+</body>
 </html>
