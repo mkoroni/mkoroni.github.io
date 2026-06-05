@@ -184,6 +184,69 @@ h2 {
 
 .feature-image img { width: 100%; max-height: 560px; object-fit: cover; }
 
+.research-accordion {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.research-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(35, 45, 50, 0.04);
+}
+
+.research-item[open] {
+  box-shadow: 0 12px 40px rgba(35, 45, 50, 0.08);
+}
+
+.research-title {
+  list-style: none;
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  user-select: none;
+}
+
+.research-title:hover {
+  background: rgba(109, 139, 155, 0.05);
+}
+
+.research-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--accent-dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.research-title h3 {
+  font-size: 1.12rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.research-content {
+  padding: 0 24px 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.research-content p {
+  margin: 0 0 12px;
+}
+
+.research-content p:last-child {
+  margin-bottom: 0;
+}
+
 .publication-list {
   display: grid;
   gap: 16px;
