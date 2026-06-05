@@ -28,19 +28,50 @@
         <p>My work connects seismic observations with numerical modelling to image Earth's interior and understand how waveforms respond to complex structure, discontinuities, and interfaces.</p>
       </div>
 
-      <div class="grid">
-        <article class="card">
-          <h3>Full-waveform modelling</h3>
-          <p>Using spectral-element simulations and adjoint methods to analyse seismic waveforms beyond ray-theoretical approximations.</p>
-        </article>
-        <article class="card">
-          <h3>Earth's internal boundaries</h3>
-          <p>Studying sensitivity to mantle discontinuities and the core–mantle boundary to improve imaging of deep-Earth structure.</p>
-        </article>
-        <article class="card">
-          <h3>Seismic hazard workflows</h3>
-          <p>Developing physics-based simulations and computational workflows relevant for ground-motion and hazard applications.</p>
-        </article>
+      <div class="research-accordion">
+        <details class="research-item" open>
+          <summary class="research-title">
+            <span class="research-icon">−</span>
+            <h3>Full-waveform modelling</h3>
+          </summary>
+          <div class="research-content">
+            <p>Using spectral-element simulations and adjoint methods to analyse seismic waveforms beyond ray-theoretical approximations.</p>
+            <!-- Add your detailed content here -->
+          </div>
+        </details>
+
+        <details class="research-item">
+          <summary class="research-title">
+            <span class="research-icon">+</span>
+            <h3>Earth's internal boundaries</h3>
+          </summary>
+          <div class="research-content">
+            <p>Studying sensitivity to mantle discontinuities and the core–mantle boundary to improve imaging of deep-Earth structure.</p>
+            <!-- Add your detailed content here -->
+          </div>
+        </details>
+
+        <details class="research-item">
+          <summary class="research-title">
+            <span class="research-icon">+</span>
+            <h3>Seismic hazard workflows</h3>
+          </summary>
+          <div class="research-content">
+            <p>Developing physics-based simulations and computational workflows relevant for ground-motion and hazard applications.</p>
+            <!-- Add your detailed content here -->
+          </div>
+        </details>
+
+        <details class="research-item">
+          <summary class="research-title">
+            <span class="research-icon">+</span>
+            <h3>High-performance computing</h3>
+          </summary>
+          <div class="research-content">
+            <p>Leveraging supercomputing resources and parallel algorithms for large-scale seismic simulations and inversions.</p>
+            <!-- Add your detailed content here -->
+          </div>
+        </details>
       </div>
 
       <div class="feature-image">
@@ -55,6 +86,15 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Handle accordion toggle icons
+    const accordionItems = document.querySelectorAll('.research-item');
+    accordionItems.forEach(item => {
+      const icon = item.querySelector('.research-icon');
+      item.addEventListener('toggle', () => {
+        icon.textContent = item.open ? '−' : '+';
+      });
+    });
   </script>
 </body>
 </html>
