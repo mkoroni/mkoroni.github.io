@@ -1,13 +1,10 @@
+```html
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Research | Maria Koroni</title>
 
@@ -16,38 +13,22 @@
     content="Research by Maria Koroni in computational seismology, seismic wave propagation, full-waveform modelling and inversion, deep-Earth imaging, and physics-based ground-motion simulations."
   />
 
-  <link
-    rel="stylesheet"
-    href="assets/css/style.css"
-  />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 
 <body>
 
-  <!-- Site header -->
+  <!-- Header -->
 
   <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
 
-    <nav
-      class="nav"
-      aria-label="Main navigation"
-    >
-
-      <a
-        class="brand"
-        href="index.html"
-      >
+      <a class="brand" href="index.html">
         Maria Koroni
       </a>
 
       <div class="nav-links">
-
-        <a
-          href="research.html"
-          class="active"
-          aria-current="page"
-        >
+        <a href="research.html" class="active" aria-current="page">
           Research
         </a>
 
@@ -66,11 +47,9 @@
         <a href="contact.html">
           Contact
         </a>
-
       </div>
 
     </nav>
-
   </header>
 
 
@@ -80,8 +59,7 @@
 
     <section class="research-page">
 
-
-      <!-- Research introduction -->
+      <!-- Introduction -->
 
       <div class="section-head">
 
@@ -90,10 +68,7 @@
         </p>
 
         <h1>
-<h1>
-  Modelling and inversion of seismic wave propagation
-</h1>
-
+          Modelling and inversion of seismic wave propagation
         </h1>
 
         <p class="research-intro">
@@ -115,24 +90,18 @@
       </div>
 
 
-      <!-- Research accordion -->
+      <!-- Research sections -->
 
       <div class="research-accordion">
 
 
-        <!-- 01: Full-waveform modelling and inversion -->
+        <!-- 01 Full-waveform modelling and inversion -->
 
-        <details
-          class="research-item"
-          open
-        >
+        <details class="research-item" open>
 
           <summary class="research-title">
 
-            <span
-              class="research-icon"
-              aria-hidden="true"
-            >
+            <span class="research-icon" aria-hidden="true">
               −
             </span>
 
@@ -154,10 +123,9 @@
           <div class="research-content">
 
             <p>
-              Full seismic waveforms contain information about wave
-              propagation, structural heterogeneity and internal interfaces
-              that is not fully captured by simplified ray-theoretical
-              measurements.
+              Full seismic waveforms contain information about wave propagation,
+              structural heterogeneity and internal interfaces that is not fully
+              captured by simplified ray-theoretical measurements.
             </p>
 
             <p>
@@ -168,19 +136,38 @@
 
             <p>
               Waveform-based measurements and Fréchet sensitivity kernels make
-              it possible to examine where seismic observations are sensitive
-              to volumetric parameters and boundary topography. This provides
-              a framework for investigating non-linear effects, parameter
+              it possible to determine where seismic observations are sensitive
+              to volumetric parameters and boundary topography. This provides a
+              framework for investigating non-linear effects, parameter
               trade-offs and the limitations of simplified interpretations.
             </p>
 
             <p>
               For global mantle discontinuities, an inversion framework was
-              developed in which full waveforms and adjoint kernels are used
-              to update the geometry of internal boundaries. The broader aim
-              is to formulate inverse problems that account directly for the
-              physics of the complete seismic wavefield.
+              developed in which full waveforms and adjoint kernels are used to
+              update the geometry of internal boundaries. The broader aim is to
+              formulate inverse problems that account directly for the physics
+              of the complete seismic wavefield.
             </p>
+
+
+            <!-- Figure 01 -->
+
+            <figure class="research-figure">
+
+              <img
+                src="images/research-full-waveform.jpg"
+                alt="Full-waveform modelling, sensitivity kernels, or inversion workflow"
+                loading="lazy"
+              />
+
+              <figcaption>
+                Full-waveform modelling and inversion combine forward
+                simulations, waveform measurements, adjoint sensitivity kernels
+                and iterative model updates.
+              </figcaption>
+
+            </figure>
 
 
             <div class="related-work">
@@ -192,7 +179,6 @@
               <ul class="reference-list">
 
                 <li>
-
                   <strong>
                     Koroni, M. and Trampert, J. (2021).
                   </strong>
@@ -211,12 +197,9 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
-
                 <li>
-
                   <strong>
                     Koroni, M., Bozdağ, E., Paulssen, H. and Trampert, J.
                     (2017).
@@ -236,7 +219,6 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
               </ul>
@@ -248,16 +230,13 @@
         </details>
 
 
-        <!-- 02: Mantle discontinuities -->
+        <!-- 02 Mantle discontinuities -->
 
         <details class="research-item">
 
           <summary class="research-title">
 
-            <span
-              class="research-icon"
-              aria-hidden="true"
-            >
+            <span class="research-icon" aria-hidden="true">
               +
             </span>
 
@@ -268,7 +247,7 @@
               </span>
 
               <h2>
-                Mantle discontinuities and boundary topography
+                Mantle discontinuities and precursor sensitivity
               </h2>
 
             </span>
@@ -299,17 +278,38 @@
             </p>
 
             <p>
-              These studies demonstrated that the relationship between
-              precursor measurements and discontinuity structure can be
-              strongly non-linear. The results also highlight the limitations
-              of interpreting precursor traveltimes using ray theory alone.
+              The resulting kernels show that precursor measurements are
+              sensitive to spatially extended regions rather than to an
+              infinitesimally thin ray path. This finite-frequency behaviour
+              influences the interpretation of discontinuity topography and the
+              spatial resolution of precursor-based measurements.
             </p>
 
             <p>
-              The work motivated inversion approaches in which volumetric
-              structure and interface geometry are treated within a consistent
-              waveform-based framework.
+              These studies also demonstrated that the relationship between
+              precursor measurements and discontinuity structure can be
+              strongly non-linear, highlighting the limitations of ray theory
+              when used in isolation.
             </p>
+
+
+            <!-- Figure 02 -->
+
+            <figure class="research-figure">
+
+              <img
+                src="images/research-precursor-kernels.jpg"
+                alt="Finite-frequency sensitivity kernels of seismic precursor phases"
+                loading="lazy"
+              />
+
+              <figcaption>
+                Finite-frequency sensitivity of seismic precursor measurements
+                to mantle discontinuity structure and surrounding elastic
+                properties.
+              </figcaption>
+
+            </figure>
 
 
             <div class="related-work">
@@ -321,7 +321,6 @@
               <ul class="reference-list">
 
                 <li>
-
                   <strong>
                     Koroni, M. and Trampert, J. (2015).
                   </strong>
@@ -340,12 +339,9 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
-
                 <li>
-
                   <strong>
                     Koroni, M., Paulssen, H. and Trampert, J. (2019).
                   </strong>
@@ -364,12 +360,9 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
-
                 <li>
-
                   <strong>
                     Haugland, S. M., Ritsema, J., Sun, D., Trampert, J. and
                     Koroni, M. (2020).
@@ -389,7 +382,6 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
               </ul>
@@ -401,16 +393,13 @@
         </details>
 
 
-        <!-- 03: Core–mantle boundary -->
+        <!-- 03 Core–mantle boundary -->
 
         <details class="research-item">
 
           <summary class="research-title">
 
-            <span
-              class="research-icon"
-              aria-hidden="true"
-            >
+            <span class="research-icon" aria-hidden="true">
               +
             </span>
 
@@ -446,15 +435,15 @@
 
             <p>
               Spectral-element simulations and adjoint sensitivity analysis
-              have been used to study reflected, refracted and diffracted
-              P- and S-wave phases related to the core–mantle boundary.
+              have been used to study reflected, refracted and diffracted P-
+              and S-wave phases related to the core–mantle boundary.
             </p>
 
             <p>
-              Ray-theoretical predictions were compared with measurements
-              made directly on full-waveform synthetic seismograms. The
-              sensitivity of individual phases to volumetric structure and
-              boundary geometry was then evaluated using adjoint kernels.
+              Ray-theoretical predictions were compared with measurements made
+              directly on full-waveform synthetic seismograms. The sensitivity
+              of individual phases to volumetric structure and boundary geometry
+              was then evaluated using adjoint kernels.
             </p>
 
             <p>
@@ -463,6 +452,24 @@
               of complementary seismic phases within waveform-based inversion
               strategies.
             </p>
+
+
+            <!-- Figure 03 -->
+
+            <figure class="research-figure">
+
+              <img
+                src="images/research-cmb.jpg"
+                alt="Sensitivity of seismic phases interacting with the core–mantle boundary"
+                loading="lazy"
+              />
+
+              <figcaption>
+                Sensitivity of core–mantle-boundary-related seismic phases to
+                lower-mantle structure and boundary geometry.
+              </figcaption>
+
+            </figure>
 
 
             <div class="related-work">
@@ -474,7 +481,6 @@
               <ul class="reference-list">
 
                 <li>
-
                   <strong>
                     Koroni, M., Borgeaud, A., Fichtner, A. and Deschamps, F.
                     (2023).
@@ -494,7 +500,6 @@
                   >
                     DOI
                   </a>
-
                 </li>
 
               </ul>
@@ -506,16 +511,13 @@
         </details>
 
 
-        <!-- 04: Ground-motion modelling -->
+        <!-- 04 Ground motion -->
 
         <details class="research-item">
 
           <summary class="research-title">
 
-            <span
-              class="research-icon"
-              aria-hidden="true"
-            >
+            <span class="research-icon" aria-hidden="true">
               +
             </span>
 
@@ -544,24 +546,18 @@
             </p>
 
             <p>
-              Current research focuses on three-dimensional sedimentary
-              basins, irregular basin geometry, basin-edge effects, pronounced
-              surface topography and the interaction between low-velocity
-              subsurface structures and the surrounding relief.
-            </p>
-
-            <p>
-              These structural features can strongly influence waveform
-              amplitudes, duration, frequency content and the spatial
-              variability of ground motion.
+              Current research focuses on three-dimensional sedimentary basins,
+              irregular basin geometry, basin-edge effects, pronounced surface
+              topography and the interaction between low-velocity subsurface
+              structures and surrounding relief.
             </p>
 
             <p>
               In the Rhône Valley, the spectral-element method is used to
               simulate seismic wave propagation through a complex Alpine
-              environment. The numerical models include three-dimensional
-              basin structure, realistic material-property variations,
-              irregular subsurface interfaces and true surface topography.
+              environment. The numerical models include three-dimensional basin
+              structure, realistic material-property variations, irregular
+              subsurface interfaces and true surface topography.
             </p>
 
             <p>
@@ -577,12 +573,30 @@
             </p>
 
             <p>
-              This research extends earlier investigations of boundary
-              geometry and finite-frequency wave propagation toward
-              regional-scale problems in which several interfaces, strong
-              material contrasts and complex geometries interact within the
-              same numerical model.
+              This research extends earlier investigations of boundary geometry
+              and finite-frequency wave propagation toward regional-scale
+              problems in which several interfaces, strong material contrasts
+              and complex geometries interact within the same numerical model.
             </p>
+
+
+            <!-- Figure 04 -->
+
+            <figure class="research-figure">
+
+              <img
+                src="images/research-rhone-ground-motion.jpg"
+                alt="Three-dimensional ground-motion simulation in the Rhône Valley"
+                loading="lazy"
+              />
+
+              <figcaption>
+                Physics-based simulation of seismic wave propagation in a
+                complex Alpine valley including three-dimensional basin
+                structure and surface topography.
+              </figcaption>
+
+            </figure>
 
 
             <div class="related-work">
@@ -594,15 +608,12 @@
               <ul class="reference-list">
 
                 <li>
-
                   <strong>
                     Koroni, M., Ermert, L. A., Bergamo, P. and Fäh, D.
                   </strong>
 
                   <em>
-                    Physics-based modelling of ground motion in the Rhône
-                    Valley, Switzerland, including three-dimensional basin
-                    structure and surface topography.
+                    Rhône Valley ground-motion modelling study.
                   </em>
 
                   Manuscript under review at the
@@ -610,11 +621,11 @@
                     Bulletin of the Seismological Society of America
                   </em>.
 
+                  <!-- Replace the provisional wording above with the exact
+                       submitted title and author order. -->
                 </li>
 
-
                 <li>
-
                   <strong>
                     Koroni, M., Ermert, L. A., Bergamo, P. and Fäh, D.
                     (2025).
@@ -636,7 +647,6 @@
                   >
                     Conference abstract
                   </a>
-
                 </li>
 
               </ul>
@@ -648,16 +658,13 @@
         </details>
 
 
-        <!-- 05: Numerical methods and HPC -->
+        <!-- 05 Numerical methods and HPC -->
 
         <details class="research-item">
 
           <summary class="research-title">
 
-            <span
-              class="research-icon"
-              aria-hidden="true"
-            >
+            <span class="research-icon" aria-hidden="true">
               +
             </span>
 
@@ -679,16 +686,15 @@
           <div class="research-content">
 
             <p>
-              Large-scale waveform simulations and inversions require
-              efficient numerical methods, parallel computing and substantial
+              Large-scale waveform simulations and inversions require efficient
+              numerical methods, parallel computing and substantial
               computational resources.
             </p>
 
             <p>
-              High-performance computing therefore forms a cross-cutting
-              component of the research, supporting both global simulations
-              of the full Earth and higher-frequency regional simulations with
-              detailed geometries.
+              High-performance computing forms a cross-cutting component of the
+              research, supporting both global simulations of the full Earth and
+              higher-frequency regional simulations with detailed geometries.
             </p>
 
             <p>
@@ -705,21 +711,28 @@
               consistent numerical simulations.
             </p>
 
+
+            <!-- Figure 05 -->
+
+            <figure class="research-figure">
+
+              <img
+                src="images/research-hpc-mesh.jpg"
+                alt="Computational mesh or high-performance seismic simulation workflow"
+                loading="lazy"
+              />
+
+              <figcaption>
+                Large-scale spectral-element simulations rely on parallel
+                computing, detailed numerical meshes and high-performance
+                computational workflows.
+              </figcaption>
+
+            </figure>
+
           </div>
 
         </details>
-
-      </div>
-
-
-      <!-- Feature image -->
-
-      <div class="feature-image">
-
-        <img
-          src="images/interior.png"
-          alt="Illustration of Earth's interior and seismic-wave propagation"
-        />
 
       </div>
 
@@ -731,47 +744,36 @@
   <!-- Footer -->
 
   <footer class="site-footer">
-
     <p>
       © <span id="year">2026</span> Maria Koroni.
     </p>
-
   </footer>
 
 
   <!-- Scripts -->
 
   <script>
-
     const yearElement = document.getElementById("year");
 
     if (yearElement) {
       yearElement.textContent = new Date().getFullYear();
     }
 
-
     const accordionItems =
       document.querySelectorAll(".research-item");
 
-
     accordionItems.forEach((item) => {
-
-      const icon =
-        item.querySelector(".research-icon");
-
+      const icon = item.querySelector(".research-icon");
 
       item.addEventListener("toggle", () => {
-
         if (icon) {
           icon.textContent = item.open ? "−" : "+";
         }
-
       });
-
     });
-
   </script>
 
 </body>
 
 </html>
+```
