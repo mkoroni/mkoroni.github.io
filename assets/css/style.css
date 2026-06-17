@@ -356,40 +356,41 @@ footer {
 }
 
 
+
 /* =========================================================
-   RESEARCH PAGE ONLY
-   Append this after the complete global stylesheet.
+   RESEARCH PAGE INTRODUCTION — SIMPLE, STABLE LAYOUT
    ========================================================= */
 
-.research-page {
-  width: min(1000px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 64px 0 96px;
-}
-
 .research-page .section-head {
-  max-width: 820px;
-  margin-bottom: 48px;
+  display: block;
+  max-width: 880px;
+  margin: 0 0 54px;
 }
 
 .research-page .eyebrow {
-  margin: 0 0 18px;
+  display: block;
+  margin: 0 0 20px;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  line-height: 1;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #65747d;
 }
 
 .research-page .section-head h1 {
-  max-width: 760px;
-  margin: 0 0 28px;
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 0 30px;
+  font-size: clamp(3rem, 6vw, 5.2rem);
   line-height: 1.02;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.055em;
 }
 
 .research-page .research-intro {
+  display: block;
+  width: 100%;
   max-width: 760px;
   margin: 0 0 16px;
   font-size: 1.05rem;
@@ -397,142 +398,8 @@ footer {
   color: #53636d;
 }
 
-.research-page .research-accordion {
-  display: grid;
-  gap: 12px;
+/* Cancel any old grid positioning inherited from earlier CSS */
+.research-page .section-head > * {
+  grid-column: auto !important;
+  grid-row: auto !important;
 }
-
-.research-page .research-item {
-  overflow: hidden;
-  border: 1px solid #e4e1db;
-  border-radius: 14px;
-  background: #fff;
-}
-
-.research-page .research-title {
-  display: grid;
-  grid-template-columns: 26px minmax(0, 1fr);
-  align-items: center;
-  gap: 12px;
-  padding: 20px 22px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.research-page .research-title::-webkit-details-marker {
-  display: none;
-}
-
-.research-page .research-title:hover {
-  background: #faf9f6;
-}
-
-.research-page .research-heading-group {
-  display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
-}
-
-.research-page .research-icon {
-  display: inline-flex;
-  justify-content: center;
-  color: #31586b;
-  font-size: 1rem;
-}
-
-.research-page .research-number {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: #74818a;
-}
-
-.research-page .research-title h2 {
-  margin: 0;
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-}
-
-.research-page .research-content {
-  padding: 8px 62px 32px 72px;
-  border-top: 1px solid #ece9e3;
-}
-
-.research-page .research-content p {
-  max-width: 740px;
-  margin: 20px 0 0;
-  line-height: 1.75;
-  color: #4e5c65;
-}
-
-.research-page .related-work {
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid #ece9e3;
-}
-
-.research-page .related-work h3 {
-  margin: 0 0 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.research-page .reference-list {
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding-left: 20px;
-}
-
-.research-page .reference-list li {
-  padding-left: 4px;
-  line-height: 1.65;
-  color: #4e5c65;
-}
-
-.research-page .feature-image {
-  max-width: 760px;
-  margin: 48px auto 0;
-}
-
-.research-page .feature-image img {
-  display: block;
-  width: 100%;
-  max-height: 430px;
-  object-fit: contain;
-  border: 1px solid #e4e1db;
-  border-radius: 16px;
-  background: #fff;
-}
-
-@media (max-width: 640px) {
-  .research-page {
-    width: min(100% - 28px, 1000px);
-    padding-top: 42px;
-  }
-
-  .research-page .section-head h1 {
-    font-size: clamp(2.4rem, 12vw, 3.7rem);
-  }
-
-  .research-page .research-title {
-    grid-template-columns: 22px minmax(0, 1fr);
-    padding: 17px 15px;
-  }
-
-  .research-page .research-heading-group {
-    grid-template-columns: 30px minmax(0, 1fr);
-    gap: 7px;
-  }
-
-  .research-page .research-title h2 {
-    font-size: 1.18rem;
-  }
-
-  .research-page .research-content {
-    padding: 4px 18px 26px 52px;
-  }
-}
-
