@@ -530,4 +530,142 @@ footer {
     gap: 10px 16px;
   }
 }
+```css
+/* =========================================================
+   CV PAGE — MORE COMPACT TYPOGRAPHY
+   ========================================================= */
+
+.cv-page {
+  width: min(940px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 52px 0 84px;
+}
+
+.cv-page .section-head {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+.cv-page .section-head h1 {
+  max-width: 680px;
+  margin: 0 0 18px;
+  font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.cv-page .section-head > p:not(.eyebrow) {
+  max-width: 640px;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #53636d;
+}
+
+.cv-grid {
+  gap: 18px;
+}
+
+.cv-grid .card {
+  padding: 28px 28px;
+  border-radius: 14px;
+}
+
+.cv-grid .card h2,
+.cv-grid .card h3 {
+  margin: 0 0 18px;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.cv-grid .timeline {
+  gap: 12px;
+}
+
+.cv-grid .timeline li {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.cv-grid .timeline li strong {
+  font-size: 0.92rem;
+}
+
+.cv-grid .compact-list {
+  gap: 10px;
+}
+
+.cv-grid .compact-list li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.cv-grid .skill-lines {
+  gap: 12px;
+}
+
+.cv-grid .skill-lines > div {
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.cv-grid .skill-lines strong {
+  font-size: 0.88rem;
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+  .cv-page {
+    width: min(100% - 32px, 940px);
+    padding-top: 44px;
+  }
+
+  .cv-page .section-head h1 {
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
+  }
+
+  .cv-grid .card {
+    padding: 24px;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 640px) {
+  .cv-page {
+    width: min(100% - 24px, 940px);
+  }
+
+  .cv-page .section-head {
+    margin-bottom: 34px;
+  }
+
+  .cv-page .section-head h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+  }
+
+  .cv-grid {
+    gap: 14px;
+  }
+
+  .cv-grid .card {
+    padding: 20px 18px;
+  }
+
+  .cv-grid .card h2,
+  .cv-grid .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+
+  .cv-grid .timeline li,
+  .cv-grid .compact-list li,
+  .cv-grid .skill-lines > div {
+    font-size: 0.88rem;
+  }
+}
+
 
