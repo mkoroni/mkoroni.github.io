@@ -518,4 +518,16 @@ footer {
     font-size: 1rem;
   }
 }
+@media (max-width: 700px) {
+  .nav {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+}
 
