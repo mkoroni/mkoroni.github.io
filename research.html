@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Maria Koroni</title>
-  <meta name="description" content="Research in computational seismology, crustal imaging, and physics-based ground-motion prediction. Full-waveform modelling, adjoint methods, and seismic hazard." />
+  <meta name="description" content="Research in computational seismology, seismic wave propagation, full-waveform modelling and inversion, Earth imaging, and physics-based ground-motion simulation." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -26,10 +26,10 @@
   <main>
     <section>
       <div class="section-head">
-        <p class="eyebrow">Research Overview</p>
-        <h1 style="font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 20px;">Crustal structure and earthquake shaking</h1>
-        <p>My research bridges <strong>seismic imaging</strong> and <strong>ground-motion science</strong> to answer a fundamental question: which features of the Earth's crust determine how the ground shakes during an earthquake? Using controlled full-waveform simulations, sensitivity analysis, and targeted inversions in two contrasting tectonic regions (central Japan and the Swiss Alps), I establish which crustal structures redistribute seismic energy and when knowledge of that structure improves shaking predictions.</p>
-        <p>This work connects two fields that have developed largely in parallel: seismic tomography, which images the Earth's interior, and ground-motion science, which measures surface shaking. The frontier lies in showing how images from one field improve predictions in the other.</p>
+        <p class="eyebrow">Research</p>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 20px;">Modelling and inversion of seismic wave propagation</h1>
+        <p>The research combines seismic observations with numerical wave propagation, full-waveform modelling and inversion. Emphasis is placed on understanding how seismic waveforms respond to complex Earth structure, from mantle discontinuities and the core–mantle boundary to sedimentary basins, surface topography and regional ground motion.</p>
+        <p>A common thread is the use of physics-based simulations to determine where waveform information originates, how sensitivity is distributed within the Earth, and how seismic observations can be used to constrain volumetric structure and boundary geometry.</p>
       </div>
     </section>
 
@@ -38,27 +38,24 @@
         <details class="research-item" open>
           <summary class="research-title">
             <span class="research-icon">−</span>
-            <h2>Deep crustal drivers of ground motion</h2>
+            <h2>Full-waveform modelling and inversion</h2>
           </summary>
           <div class="research-content">
-            <p>
-              <strong>Central hypothesis:</strong> Crustal structures—including velocity anomalies, faults, and the crust–mantle boundary—leave measurable, reproducible imprints on earthquake shaking that can be detected and distinguished from source effects.
-            </p>
-            <p>
-              The crust is heterogeneous at all scales: thermal anomalies create velocity variations; faults and geological contacts create velocity contrasts; deep interfaces scatter and redirect waves. Yet distinguishing which of these features actually controls observed shaking, rather than simply varying in correlation with it, requires controlled experiments.
-            </p>
-            <p>
-              In Japan, I use dense recordings from the national seismic networks (K-NET, KiK-net) and detailed regional tomographic models to test how mid-crustal anomalies (magma chambers, thermal anomalies) alter recorded waveforms and ground-motion measures. Using a hierarchy of models—from layered crust to full 3D structure—I measure the contribution of each structural feature while holding the source fixed. Targeted full-waveform inversion then sharpens anomalies identified as important, and the refined model is tested on withheld earthquake records.
-            </p>
+            <p>Full seismic waveforms contain information about wave propagation, structural heterogeneity and internal interfaces that is not fully captured by simplified ray-theoretical measurements.</p>
+            <p>Spectral-element simulations, adjoint methods and iterative inversion are used to analyse this information while accounting for the finite-frequency character of seismic waves.</p>
+            <p>Waveform-based measurements and Fréchet sensitivity kernels make it possible to determine where seismic observations are sensitive to volumetric parameters and boundary topography. This provides a framework for investigating non-linear effects, parameter trade-offs and the limitations of simplified interpretations.</p>
+            <p>For global mantle discontinuities, an inversion framework was developed in which full waveforms and adjoint kernels are used to update the geometry of internal boundaries. The broader aim is to formulate inverse problems that account directly for the physics of the complete seismic wavefield.</p>
+
             <figure class="research-figure">
               <img src="images/research-full-waveform.jpg" alt="Full-waveform modelling workflow showing forward simulation, waveform analysis, and sensitivity kernels" loading="lazy" />
-              <figcaption>Full-waveform modelling combines forward spectral-element simulations with waveform measurements and adjoint sensitivity kernels to identify which crustal structures produce observed shaking signatures.</figcaption>
+              <figcaption>Full-waveform modelling and inversion combine forward simulations, waveform measurements, adjoint sensitivity kernels and iterative model updates.</figcaption>
             </figure>
+
             <div class="related-work">
-              <h3>Key publications</h3>
+              <h3>Related publications</h3>
               <ul class="reference-list">
-                <li><strong>Koroni, M.</strong>, Bozdağ, E., Paulssen, H., Trampert, J. (2017). <em>Sensitivity analysis of seismic waveforms to upper-mantle discontinuities using the adjoint method.</em> Geophysical Journal International, 210(3), 1965–1980. <a href="https://doi.org/10.1093/gji/ggx286" target="_blank">DOI</a></li>
-                <li><strong>Koroni, M.</strong>, Trampert, J. (2021). <em>Imaging global mantle discontinuities: A test using full-waveforms and adjoint kernels.</em> Geophysical Journal International, 226(3), 1498–1516. <a href="https://doi.org/10.1093/gji/ggab119" target="_blank">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Trampert, J. (2021). <em>Imaging global mantle discontinuities: a test using full waveforms and adjoint kernels.</em> Geophysical Journal International. <a href="https://doi.org/10.1093/gji/ggab119" target="_blank" rel="noopener noreferrer">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Bozdağ, E., Paulssen, H., Trampert, J. (2017). <em>Sensitivity analysis of seismic waveforms to upper-mantle discontinuities using the adjoint method.</em> Geophysical Journal International. <a href="https://doi.org/10.1093/gji/ggx286" target="_blank" rel="noopener noreferrer">DOI</a></li>
               </ul>
             </div>
           </div>
@@ -67,26 +64,23 @@
         <details class="research-item">
           <summary class="research-title">
             <span class="research-icon">+</span>
-            <h2>Shallow and deep structure coupling</h2>
+            <h2>Mantle discontinuities and precursor sensitivity</h2>
           </summary>
           <div class="research-content">
-            <p>
-              <strong>Question:</strong> When does deeper crustal structure control a site's seismic response? How much of the observed variation in ground motion is due to local geology, and how much to the waves arriving at the site shaped by deeper propagation?
-            </p>
-            <p>
-              Site response—the amplification or de-amplification of shaking by the shallow subsurface—is traditionally modeled in isolation: seismic waves are prescribed at a reference rock depth and their interaction with overlying sediments is calculated. This one-dimensional approach assumes the waves arrive vertically from below. In reality, the 3D crust determines the direction, timing, and amplitude of wave arrival; sedimentary basins and surface topography then modify that 3D wavefield further.
-            </p>
-            <p>
-              In the Swiss Alps, I use high-resolution crustal models and dense station networks to test whether placing the same shallow geology (sediments, topography) above different crustal structures produces different ground-motion responses. I compare predictions from fully 3D simulations with those from 1D site-response calculations. Where differences are large, targeted inversion improves the crustal model. The advance is to identify when deep-Earth knowledge is necessary for accurate site-response prediction—and when simpler 1D methods suffice.
-            </p>
+            <p>Mantle discontinuities, particularly the interfaces near 410 and 660 km depth, provide important constraints on the thermal, mineralogical and dynamical state of the Earth's interior.</p>
+            <p>The interaction of seismic waves with these boundaries has been investigated using exact synthetic seismograms, spectral-element modelling, reflected seismic phases and adjoint sensitivity kernels.</p>
+            <p>SS and PP precursor observations were examined to determine how measured traveltime shifts respond to boundary topography, volumetric elastic parameters and finite-frequency wave propagation.</p>
+
             <figure class="research-figure">
-              <img src="images/research-rhone-valley.jpg" alt="Alpine valley with 3D crustal structure, sedimentary basins, and surface topography" loading="lazy" />
-              <figcaption>Simulated ground motion in an Alpine valley including 3D crustal structure, sedimentary basins, and surface topography. Ground-motion amplitude changes systematically over short distances, organized by the crust beneath.</figcaption>
+              <img src="images/research-sensitivity-kernels.jpg" alt="Finite-frequency sensitivity kernels of seismic precursor phases" loading="lazy" />
+              <figcaption>Finite-frequency sensitivity of seismic precursor measurements to mantle discontinuity structure and surrounding elastic properties.</figcaption>
             </figure>
+
             <div class="related-work">
-              <h3>Key publications</h3>
+              <h3>Related publications</h3>
               <ul class="reference-list">
-                <li><strong>Koroni, M.</strong>, Ermert, L. A., Bergamo, P., Sunny, J., Fäh, D. (2026). <em>Frequency- and Component-Dependent Topographic Effects in Alpine Valleys Using 3D Physics-Based Simulations.</em> Bulletin of the Seismological Society of America. <a href="https://doi.org/10.1785/0120260143" target="_blank">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Trampert, J. (2015). <em>The effect of topography of upper-mantle discontinuities on SS precursors.</em> Geophysical Journal International. <a href="https://doi.org/10.1093/gji/ggu397" target="_blank" rel="noopener noreferrer">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Paulssen, H., Trampert, J. (2019). <em>Sensitivity kernels of PP precursor traveltimes and their limitations for imaging topography of discontinuities.</em> Geophysical Research Letters. <a href="https://doi.org/10.1029/2018GL081592" target="_blank" rel="noopener noreferrer">DOI</a></li>
               </ul>
             </div>
           </div>
@@ -95,27 +89,22 @@
         <details class="research-item">
           <summary class="research-title">
             <span class="research-icon">+</span>
-            <h2>Sensitivity kernels and structural imaging</h2>
+            <h2>Core–mantle boundary waveforms</h2>
           </summary>
           <div class="research-content">
-            <p>
-              <strong>Methodological foundation:</strong> Finite-frequency sensitivity kernels show which parts of the Earth a given seismic observation is sensitive to, accounting for the finite wavelength of seismic waves.
-            </p>
-            <p>
-              Classical ray theory predicts that a seismic phase is sensitive only to the thin ray path it traces through the Earth. In reality, seismic waves have finite wavelength and interact with structure over a larger region. Sensitivity kernels—computed using adjoint methods—map this region. They reveal that a single seismic measurement (e.g., a waveform or traveltime) can be sensitive to structure across a wide area, and that sensitivity depends on frequency.
-            </p>
-            <p>
-              I have developed and applied adjoint sensitivity kernels to understand how seismic waves sense mantle discontinuities, core-mantle boundary structure, and crustal heterogeneity. These kernels are invaluable for: (1) inverting for structure by computing gradients for iterative improvement; (2) understanding why two different Earth models can produce similar waveforms (a phenomenon called non-uniqueness); and (3) designing networks and choosing frequencies to maximize sensitivity to target structures.
-            </p>
+            <p>Seismic signals that interact with the core–mantle boundary are highly sensitive to heterogeneity and morphology near the boundary and are therefore valuable for probing deep-Earth structure.</p>
+            <p>By combining full-waveform simulations with phase-specific observations, it is possible to identify which parts of the signal carry information about boundary geometry and which are dominated by other structures along the path.</p>
+            <p>The approach is useful for testing the resolving power of different seismic phases and for quantifying how uncertainty in one structural component propagates into inferences about the deep mantle.</p>
+
             <figure class="research-figure">
-              <img src="images/research-sensitivity-kernels.jpg" alt="Finite-frequency sensitivity kernels for seismic phases" loading="lazy" />
-              <figcaption>Finite-frequency sensitivity kernels reveal that seismic waves interact with structure over extended regions, not just along thin ray paths. Color shows sensitivity magnitude; the kernel shape depends on frequency and wave type.</figcaption>
+              <img src="images/research-cmb.jpg" alt="Core-mantle boundary waveform sensitivity and seismic interactions" loading="lazy" />
+              <figcaption>Core–mantle boundary waveforms provide a sensitive probe of deep-Earth structure and boundary complexity.</figcaption>
             </figure>
+
             <div class="related-work">
-              <h3>Key publications</h3>
+              <h3>Related publications</h3>
               <ul class="reference-list">
-                <li><strong>Koroni, M.</strong>, Paulssen, H., Trampert, J. (2019). <em>Sensitivity kernels of PP precursor traveltimes and their limitations for imaging topography of discontinuities.</em> Geophysical Research Letters, 46(2), 698–707. <a href="https://doi.org/10.1029/2018GL081592" target="_blank">DOI</a></li>
-                <li><strong>Koroni, M.</strong>, Trampert, J. (2015). <em>The effect of topography of upper-mantle discontinuities on SS precursors.</em> Geophysical Journal International, 204(1), 667–681. <a href="https://doi.org/10.1093/gji/ggv471" target="_blank">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Borgeaud, A., Fichtner, A., Deschamps, F. (2023). <em>An analysis of core–mantle-boundary-related seismic waves using full-waveform modelling and adjoint methods.</em> Geophysical Journal International. <a href="https://doi.org/10.1093/gji/ggac389" target="_blank" rel="noopener noreferrer">DOI</a></li>
               </ul>
             </div>
           </div>
@@ -124,22 +113,22 @@
         <details class="research-item">
           <summary class="research-title">
             <span class="research-icon">+</span>
-            <h2>Generative models and broadband waveform synthesis</h2>
+            <h2>Surface topography and basin effects</h2>
           </summary>
           <div class="research-content">
-            <p>
-              <strong>Emerging direction:</strong> High-frequency earthquake waveforms can be generated using machine learning models trained on physics-based simulations, extending predictions beyond the frequency limits of direct simulation.
-            </p>
-            <p>
-              Physics-based simulations using spectral-element methods (SEM) are accurate and physically interpretable, but computationally expensive. They are currently limited to frequencies of roughly 1–10 Hz for regional domains. Engineering applications require shaking predictions up to 10–25 Hz or higher. Hybrid methods combine low-frequency SEM simulations with statistical or machine-learning models for higher frequencies.
-            </p>
-            <p>
-              I co-developed a generative machine-learning model (denoising diffusion probabilistic models, or diffusion models) that learns to generate high-frequency waveforms conditioned on low-frequency physics-based simulations. The model is trained on thousands of recorded earthquakes and SEM predictions, and can synthesize realistic broadband waveforms (0.5–25 Hz) that are both physically grounded and statistically accurate. Current work extends this to the Swiss region and integrates it with full 3D ground-motion simulations.
-            </p>
+            <p>Local site response is shaped by the interaction between shallow sediments, topography and the underlying regional crustal structure. These effects are most pronounced in valleys and mountain settings, where 3D geometry and basin depth strongly modulate shaking.</p>
+            <p>In the Swiss Alps and similar settings, the relationship between basin structure, surface topography and seismic amplification is investigated using high-resolution 3D simulations and dense observational networks.</p>
+            <p>These studies aim to identify which features of the near-surface geology and valley geometry are most important in governing amplitude, duration and polarization of ground motion.</p>
+
+            <figure class="research-figure">
+              <img src="images/research-rhone-valley.jpg" alt="Alpine valley ground-motion simulation with 3D topography and basin structure" loading="lazy" />
+              <figcaption>Simulated ground motion in an Alpine valley showing the combined effect of 3D basin structure, sedimentary geometry and surface topography.</figcaption>
+            </figure>
+
             <div class="related-work">
-              <h3>Key publications</h3>
+              <h3>Related publications</h3>
               <ul class="reference-list">
-                <li>Palgunadi, K. H., Bergmeister, A., Bosisio, A., Ermert, L. A., <strong>Koroni, M.</strong>, Perraudin, N., Dirmeier, S., Meier, M.-A. (2025). <em>High resolution seismic waveform generation using denoising diffusion.</em> Journal of Geophysical Research: Machine Learning and Computation, 2, e2025JH000862. <a href="https://doi.org/10.1029/2025JH000862" target="_blank">DOI</a></li>
+                <li><strong>Koroni, M.</strong>, Ermert, L. A., Bergamo, P., Sunny, J., Fäh, D. (2026). <em>Frequency- and Component-Dependent Topographic Effects in Alpine Valleys Using 3D Physics-Based Simulations.</em> Bulletin of the Seismological Society of America. <a href="https://doi.org/10.1785/0120260143" target="_blank" rel="noopener noreferrer">DOI</a></li>
               </ul>
             </div>
           </div>
@@ -148,36 +137,23 @@
         <details class="research-item">
           <summary class="research-title">
             <span class="research-icon">+</span>
-            <h2>High-performance computing and regional simulations</h2>
+            <h2>Physics-based ground motion and seismic hazard</h2>
           </summary>
           <div class="research-content">
-            <p>
-              <strong>Technical foundation:</strong> Large-scale 3D wave-propagation simulations require specialized numerical methods, parallel computing, and optimized workflows.
-            </p>
-            <p>
-              Simulating seismic wave propagation across a 200 km × 200 km × 100 km region at frequencies up to 10 Hz requires: (1) a high-resolution computational mesh with tens of millions of elements; (2) time-stepping of millions of steps; (3) parallel algorithms on modern GPUs and CPUs. The Swiss Seismological Service has invested in these tools through allocations on CSCS (Swiss National Supercomputing Center), enabling simulations that were impossible a decade ago.
-            </p>
-            <p>
-              I lead the coordination of SED's access to CSCS resources for regional ground-motion simulation. I have developed and optimized workflows for: building and validating 3D meshes; running coupled SEM simulations; interfacing with domain-reduction methods (DRM) for nested simulations; and post-processing results. These tools now support multiple research projects, including ENSI-funded ground-motion hazard assessment for Swiss nuclear power plants.
-            </p>
+            <p>Large-scale numerical simulations provide a direct route to connect crustal structure to the spatial variation of shaking. This is particularly relevant for areas where the geologic setting is complex and standard empirical ground-motion models may not fully capture the controlling physics.</p>
+            <p>My work extends from forward wave propagation to the interpretation of observed ground motions, with a focus on identifying the structural drivers of amplitude variability and predicting realistic shaking patterns across regions.</p>
+            <p>The goal is not only to simulate strong motions, but to determine which features of the Earth need to be known for robust hazard assessment and which simplifications are scientifically justifiable.</p>
+
             <div class="related-work">
-              <h3>Key allocations & technical achievements</h3>
+              <h3>Related work</h3>
               <ul class="reference-list">
-                <li><strong>2025:</strong> CSCS Small Production Project, PI – 7,526 node hours on Daint.Alps for physics-based ground motion modelling across Switzerland</li>
-                <li><strong>2026:</strong> CSCS Small Production Project, PI – 4,815 node hours for regional-to-local ground motion sensitivity and structural response analysis</li>
-                <li><strong>2023:</strong> CSCS Production Project, PI – 336,772 node hours on Piz Daint GPUs for multi-scale earthquake simulation and seismic hazard assessment</li>
+                <li>Physics-based ground-motion modelling in the Swiss Alps and active tectonic regions</li>
+                <li>Regional simulation workflows using high-performance computing resources</li>
+                <li>Coupling of crustal structure, site effects and probabilistic seismic hazard assessment</li>
               </ul>
             </div>
           </div>
         </details>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Research Vision</p>
-        <h2>The IMPULSE project</h2>
-        <p>My current research direction is formalized in the IMPULSE project: a systematic investigation of how crustal structure controls ground motion across two tectonic regions, from small well-recorded earthquakes to large uncertain ruptures. IMPULSE asks: <strong>which crustal features must we resolve to predict shaking, at what scales, and under what conditions does that knowledge remain predictive?</strong> The outcome will be a physical framework linking Earth-imaging and earthquake-prediction science.</p>
       </div>
     </section>
   </main>
