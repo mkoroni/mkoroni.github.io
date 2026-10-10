@@ -3,73 +3,476 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maria Koroni | Computational Seismology & Ground Motion Physics</title>
-  <meta name="description" content="Maria Koroni studies how crustal structure shapes earthquake ground motion, connecting seismic imaging with physics-based prediction. Computational seismology, full-waveform modelling, regional simulation." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Maria Koroni | Computational Seismology</title>
+  <meta name="description"
+        content="Maria Koroni, Senior Scientist at the Swiss Seismological Service, ETH Zürich. Research in seismic wave propagation, Earth structure and earthquake ground motion." />
+
+  <style>
+    :root {
+      --ink: #20343d;
+      --muted: #516770;
+      --accent: #315f70;
+      --paper: #fafbf9;
+      --line: #d7e0e1;
+      --width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 0.25em;
+      text-decoration-thickness: 1px;
+    }
+
+    a:hover {
+      color: #172e38;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .nav {
+      max-width: var(--width);
+      margin: auto;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("images/iceland.jpg") center 57% / cover no-repeat;
+    }
+
+    /* This overlay fades the photograph without fading the text.
+       Lower the opacity values to make the photograph stronger. */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        90deg,
+        rgba(250, 251, 249, 0.93) 0%,
+        rgba(250, 251, 249, 0.85) 46%,
+        rgba(250, 251, 249, 0.65) 100%
+      );
+    }
+
+    .hero-inner {
+      max-width: var(--width);
+      margin: auto;
+      padding: 76px 28px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.85fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin: 0 0 19px;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      line-height: 1.18;
+    }
+
+    h1 {
+      font-size: clamp(3.1rem, 6vw, 4.8rem);
+      letter-spacing: -0.045em;
+      margin: 0 0 20px;
+    }
+
+    .affiliation {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 25px;
+    }
+
+    .lede {
+      font-size: 1.17rem;
+      line-height: 1.8;
+      margin: 0;
+      max-width: 620px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 25px;
+      margin-top: 28px;
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      padding-top: 7px;
+    }
+
+    .portrait {
+      display: block;
+      width: 146px;
+      height: 174px;
+      object-fit: cover;
+      margin: 0 0 24px;
+      border: 4px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .quick-facts {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-facts li {
+      border-top: 1px solid rgba(64, 90, 100, 0.22);
+      padding: 15px 0;
+    }
+
+    .quick-facts strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.77rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .content {
+      max-width: var(--width);
+      margin: auto;
+      padding: 58px 28px 65px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 70px;
+      margin-bottom: 43px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+      margin: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .card {
+      padding: 23px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h3 {
+      margin: 0 0 13px;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0 0 19px;
+      font-size: 0.95rem;
+    }
+
+    .card > a {
+      font-size: 0.86rem;
+    }
+
+    footer {
+      max-width: var(--width);
+      margin: auto;
+      padding: 23px 28px 30px;
+      border-top: 1px solid var(--line);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .hero-inner {
+        gap: 36px;
+        grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1fr);
+        padding-top: 55px;
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 8px 15px;
+        justify-content: flex-end;
+      }
+
+      .section-head {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px 23px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        font-size: 0.83rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 44px 23px;
+      }
+
+      .hero::after {
+        background: rgba(250, 251, 249, 0.85);
+      }
+
+      .lede {
+        font-size: 1.06rem;
+      }
+
+      .hero-card {
+        padding: 0;
+      }
+
+      .portrait {
+        width: 120px;
+        height: 144px;
+      }
+
+      .content {
+        padding: 39px 23px;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 30px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      footer {
+        margin: 0 23px;
+        padding: 20px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header class="site-header">
-    <div>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="index.html">Maria Koroni</a>
-        <div class="nav-links">
-          <a href="research.html">Research</a>
-          <a href="students.html">Students & Projects</a>
-          <a href="publications.html">Publications</a>
-          <a href="cv.html">CV</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </nav>
-    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-current="page">
+        Maria Koroni
+      </a>
+
+      <div class="nav-links">
+        <a href="research.html">Research</a>
+        <a href="students.html">Students &amp; Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <div class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Computational seismology · Regional wave physics · ETH Zürich</p>
-        <h1>Maria Koroni</h1>
-        <p class="lede">I study how crustal structure shapes earthquake shaking. By bridging seismic imaging, full-waveform modelling, and ground-motion science, my research establishes which knowledge of the Earth's interior improves seismic hazard prediction.</p>
-      </div>
-      <aside class="hero-card">
-        <img class="portrait" src="images/mariaK10.jpg" alt="Portrait of Maria Koroni" />
-        <ul class="quick-facts">
-          <li><strong>Position</strong><br>Senior Scientist, Swiss Seismological Service, ETH Zürich</li>
-          <li><strong>Research focus</strong><br>Physics-based ground motion; crustal structure and shaking</li>
-          <li><strong>Teaching</strong><br>Probabilistic Seismic Hazard Analysis (MSc)</li>
-          <li><strong>ORCID</strong><br><a href="https://orcid.org/0000-0003-3070-2356" target="_blank">0000-0003-3070-2356</a></li>
-        </ul>
-      </aside>
-    </div>
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Computational seismology</p>
 
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Research Approach</p>
-        <h2>Bridging seismic imaging and earthquake prediction</h2>
-        <p>My research asks a fundamental question: <strong>which features of the Earth's crust must we know to predict ground motion, and why?</strong> To answer this, I combine three tools—seismic tomography, full-waveform modelling, and sensitivity analysis—to test how deep structure redistributes seismic energy and when that knowledge improves predictions.</p>
+          <h1 id="intro-title">Maria Koroni</h1>
+
+          <p class="affiliation">
+            Senior Scientist<br />
+            Swiss Seismological Service · ETH Zürich
+          </p>
+
+          <p class="lede">
+            I study how seismic waves travel through the Earth and how
+            geological structure affects earthquake ground motion.
+            My research combines seismic imaging, numerical wave propagation
+            and earthquake observations to understand the physical causes
+            of shaking and its variability.
+          </p>
+
+          <div class="hero-links">
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="mailto:maria.koroni@sed.ethz.ch">Email</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Academic information">
+          <img
+            class="portrait"
+            src="images/mariaK10.jpg"
+            alt="Portrait of Maria Koroni"
+            width="146"
+            height="174"
+          />
+
+          <ul class="quick-facts">
+            <li>
+              <strong>Research interests</strong>
+              Seismic wave physics, Earth structure and
+              ground-motion modelling
+            </li>
+
+            <li>
+              <strong>Teaching</strong>
+              Probabilistic Seismic Hazard Analysis (MSc)
+            </li>
+
+            <li>
+              <strong>ORCID</strong>
+              <a href="https://orcid.org/0000-0003-3070-2356"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                0000-0003-3070-2356
+              </a>
+            </li>
+          </ul>
+        </aside>
       </div>
+    </section>
+
+    <section class="content" aria-labelledby="research-heading">
+      <div class="section-head">
+        <h2 id="research-heading">
+          Earth structure<br />
+          and earthquake shaking
+        </h2>
+
+        <p>
+          How do variations in Earth structure redistribute seismic energy?
+          Which structural features matter for ground-motion prediction?
+          I investigate these questions through full-waveform modelling,
+          tomography and sensitivity analysis, with a focus on crustal
+          structure, sedimentary basins and topography.
+        </p>
+      </div>
+
       <div class="grid">
         <article class="card">
-          <h3>🌍 Research</h3>
-          <p>Full-waveform modelling, adjoint methods, and crustal inversion to understand how Earth structure controls ground motion in Japan and the Swiss Alps.</p>
+          <h3>Research</h3>
+          <p>
+            Numerical simulations and seismic observations to investigate
+            wave propagation in heterogeneous Earth models and the
+            physical controls on ground motion.
+          </p>
+          <a href="research.html">Research topics →</a>
         </article>
+
         <article class="card">
-          <h3>👥 Supervision</h3>
-          <p>Mentoring postdocs, PhD and MSc students in seismic imaging, physics-based simulation, and ground-motion prediction methods.</p>
+          <h3>Teaching &amp; supervision</h3>
+          <p>
+            Teaching in seismic hazard analysis and student projects on
+            seismic imaging, wave propagation and earthquake ground motion.
+          </p>
+          <a href="students.html">Students and projects →</a>
         </article>
+
         <article class="card">
-          <h3>📊 Publications</h3>
-          <p>Peer-reviewed work in computational seismology, waveform imaging, and physics-based seismic hazard assessment. ORCID-synced.</p>
+          <h3>Publications</h3>
+          <p>
+            Journal articles on computational seismology, waveform
+            sensitivity, Earth structure and physics-based
+            ground-motion modelling.
+          </p>
+          <a href="publications.html">Publication list →</a>
         </article>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year">2026</span> Maria Koroni. Academic portfolio built for clarity and performance.
+    <span>© <span id="year">2026</span> Maria Koroni</span>
+    <span>Swiss Seismological Service · ETH Zürich</span>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 </body>
 </html>
